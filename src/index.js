@@ -13,20 +13,23 @@ import thunk from "redux-thunk";
 
 import reducers from './reducers';
 
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {green900, grey600 } from 'material-ui/styles/colors';
+import { MuiThemeProvider } from 'material-ui/styles';
+import {green900, grey600 } from 'material-ui/colors';
+import createMuiTheme from 'material-ui/styles/theme';
+import createPalette from 'material-ui/styles/palette';
 
 import App from './App';
 
-injectTapEventPlugin();
-const muiTheme = getMuiTheme({
-  palette: {
-    primary1Color: grey600,
-    accent1Color: green900
-  }
+
+const theme = createMuiTheme({
+  palette: createPalette({
+    primary: grey600,
+    accent: green900,
+  }),
 });
+
+var sheetsManager = new WeakMap();
+
 
 const history = createHistory();  
 const middleware = routerMiddleware(history)
@@ -36,7 +39,7 @@ const store = createStore(reducers, composeWithDevTools(applyMiddleware(middlewa
 
 ReactDOM.render(
   <Provider store={store}>
-    <MuiThemeProvider muiTheme={muiTheme}>
+    <MuiThemeProvider theme={theme}>
       <Router history={history}>
         <App/>
       </Router>

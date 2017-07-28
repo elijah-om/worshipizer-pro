@@ -3,15 +3,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from "react-router-redux";
 
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from 'material-ui/Button';
 
-const style = {
-  // margin: 12,
-};
 
-const StartdButton = (props) => (
-  <RaisedButton onTouchTap={props.onClick}label="Go to the song book" secondary={true} style={style} />
-);
+
+
+const StartdButton = ( (props) => (
+  <Button onClick = {props.onClick} raised color="primary">
+    Go to the song book
+  </Button>
+));
 
 
 const HomePage = (props) => (

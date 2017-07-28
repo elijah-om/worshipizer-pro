@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs';
+import Paper from 'material-ui/Paper';
+import { withStyles, createStyleSheet } from 'material-ui/styles';
 import { connect } from 'react-redux';
 import { push } from "react-router-redux";
 
+
+const styleSheet = createStyleSheet('CenteredTabs', theme => ({
+  root: {
+    flexGrow: 1,
+    marginTop: theme.spacing.unit * 3,
+  },
+}));
 
 class MenuBar extends Component{
     render() {
         return (
             <Tabs
                 className="menu-bar"
-                onChange={this.props.onChangeTab} 
-                value={this.props.value}   
+                //onChange={this.props.onChangeTab} 
+                //value={this.props.value}   
             >
                 <Tab
                     label="Songs"
@@ -46,6 +55,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(MenuBar);
 
-// export default MenuBar;
+
+export default withStyles(styleSheet)(MenuBar);
+
+// export default connect(mapStateToProps, mapDispatchToProps);
