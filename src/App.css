@@ -1,0 +1,25 @@
+
+.menu-bar {
+    position: fixed;
+    width: 100%;
+    left: 0; bottom: 0;
+    display: none;
+}
+@media screen and (max-width: 420px) {
+    .menu-bar {
+        display:unset; 
+    }
+}
+
+
+.home-page{
+    top: 30%;
+    bottom: 0;
+    align-content: center;
+     margin: 150px auto auto auto; 
+    width: 200px
+}
+
+h1, p {
+    text-align: center;
+}

@@ -1,12 +1,10 @@
 import { combineReducers } from 'redux'
 // Reducers
-import reducer1 from './reducer1';
-import reducer2 from './reducer2';
+import ChangeTabReducer from './ChangeTabReducer';
 
 // Combine Reducers
 var reducers = combineReducers({
-    reducer1,
-    reducer1
+    menuBarState: ChangeTabReducer
 });
 
 export default reducers;
