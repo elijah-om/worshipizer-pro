@@ -13,13 +13,15 @@
 
 
 .home-page{
-    top: 30%;
+    /* top: 30%; */
     bottom: 0;
-    align-content: center;
-     margin: 150px auto auto auto; 
-    width: 200px
+    /* align-content: center; */
+    margin: 150px auto auto auto; 
+    width: 200px 
 }
 
-h1, p {
+h2, p, h4 {
     text-align: center;
+    margin: 10px;
+    font-family: Berlin Sans FB;
 }

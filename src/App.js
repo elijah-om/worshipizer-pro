@@ -11,13 +11,14 @@ class App extends Component {
     render() {
         return (
             <div>
-                <Switch>
+                 {/* <Switch>  */}
                     <Route exact path='/' component={HomePage}/>
-                    <Route path='/'>                        
                         <Route path='/songbook' component={SongBookPage}/>
-                         {/* <Route path='/' component={MenuBar}/>  */}
-                    </Route>    
-                </Switch>
+                        <Route path='/playlists' component={SongBookPage}/>
+                        <Route path='/live' component={SongBookPage}/>
+                        <Route path='/settings' component={SongBookPage}/>
+                        <Route  path='/:page' component={MenuBar}/>  
+                 {/* </Switch>  */}
             </div>
         )
     }

@@ -4,7 +4,7 @@ const initialState = "songs";
 
 const ChangeTabReducer = function(state = initialState, action) {
   switch(action.type) {
-    case "ACTIVE_TAB_CHANGE":
+    case types.ACTIVE_TAB_CHANGE:
       return action.payload
   }
   return state;

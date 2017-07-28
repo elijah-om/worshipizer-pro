@@ -1,13 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import { createStore, combineReducers, applyMiddleware } from 'redux'
-import { Provider } from 'react-redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
 
-import createHistory from 'history/createBrowserHistory'
-import { Route } from 'react-router-dom'
+import createHistory from 'history/createBrowserHistory';
+import { Route } from 'react-router-dom';
 
-import { ConnectedRouter as Router, routerReducer, routerMiddleware } from 'react-router-redux'
+import { ConnectedRouter as Router, routerReducer, routerMiddleware } from 'react-router-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from "redux-thunk";
 
@@ -31,29 +31,8 @@ const muiTheme = getMuiTheme({
 const history = createHistory();  
 const middleware = routerMiddleware(history)
 
-const initialState = {activeTab: "songs"};
+const store = createStore(reducers, composeWithDevTools(applyMiddleware(middleware, thunk)));
 
-const ChangeTabReducer = function(state = initialState, action) {
-  switch(action.type) {
-    case "ACTIVE_TAB_CHANGE":
-      return action.payload
-  }
-  return state;
-}
-
-
-const store = createStore(
-  combineReducers({
-    menuBarState: ChangeTabReducer,
-    router: routerReducer
-  }),
-  composeWithDevTools(applyMiddleware(middleware, thunk))
-)
-
-
-// store.dispatch(push('/foo'))
-const Home = () => (<div>Home page</div>);
-const About = () => (<div>About page</div>);
 
 ReactDOM.render(
   <Provider store={store}>

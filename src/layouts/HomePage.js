@@ -16,14 +16,15 @@ const StartdButton = (props) => (
 
 const HomePage = (props) => (
     <div className="home-page">
-        <h1>Hello worshipper</h1>
-        <p>Lets started</p>
+        <h2>Welcome to the WORSHIPIZER</h2>
+        <h4>Lets started</h4>
         <StartdButton onClick={props.navigateToSongBook}/>
     </div>
 )
 
 let mapDispatchToProps = (dispatch) => ({
   navigateToSongBook: () => {
+    dispatch({type: "ACTIVE_TAB_CHANGE", payload: "songs"});
     dispatch(push('/songbook'));
   }
 })

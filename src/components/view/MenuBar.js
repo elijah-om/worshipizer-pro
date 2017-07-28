@@ -4,19 +4,14 @@ import { connect } from 'react-redux';
 import { push } from "react-router-redux";
 
 
-
 class MenuBar extends Component{
     render() {
         return (
             <Tabs
                 className="menu-bar"
-                onChange={this.props.onChangeTab}
-                value={this.props.value} 
+                onChange={this.props.onChangeTab} 
+                value={this.props.value}   
             >
-                <Tab
-                    label="Home"
-                    value="home"
-                />
                 <Tab
                     label="Songs"
                     value="songs"
@@ -29,7 +24,12 @@ class MenuBar extends Component{
                     value="live"
                     label="LIVE"
                 />
-            </Tabs>)
+                <Tab
+                    label="Settings"
+                    value="settings"
+                />
+            </Tabs>
+        )
     }
 };
 
@@ -47,3 +47,5 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MenuBar);
+
+// export default MenuBar;
