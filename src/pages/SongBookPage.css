@@ -1,0 +1,17 @@
+.song-item {
+    margin: 6px;
+    background-color: lightgray;
+}
+
+/* .song-title.mini, .song-subtitle.mini {
+} */
+.song-title.mini {
+    padding: 3px; 
+    font-size: 20px;
+    font-weight: bold;
+}
+.song-subtitle.mini {
+    font-size: 15px;
+    padding-left: 5px;
+    font-style: italic;
+}

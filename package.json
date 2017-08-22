@@ -1,8 +1,9 @@
 {
   "name": "worshipizer-pro",
-  "version": "0.0.2-beta.1",
+  "version": "0.0.2-beta.2",
   "private": true,
   "dependencies": {
+    "axios": "^0.16.2",
     "history": "^4.6.3",
     "material-ui": "^0.18.7",
     "react": "^15.6.1",

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
 
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
@@ -31,7 +32,7 @@ const muiTheme = getMuiTheme({
 const history = createHistory();  
 const middleware = routerMiddleware(history)
 
-const store = createStore(reducers, composeWithDevTools(applyMiddleware(middleware, thunk)));
+const store = createStore(reducers, composeWithDevTools(applyMiddleware(thunk, middleware)));
 
 
 ReactDOM.render(

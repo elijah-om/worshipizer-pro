@@ -24,8 +24,8 @@ const HomePage = (props) => (
 
 let mapDispatchToProps = (dispatch) => ({
   navigateToSongBook: () => {
-    dispatch({type: "ACTIVE_TAB_CHANGE", payload: "songs"});
-    dispatch(push('/songbook'));
+    dispatch({type: "ACTIVE_TAB_CHANGE", payload: {tab: 'songs'}});
+    dispatch(push('/songs'));
   }
 })
 

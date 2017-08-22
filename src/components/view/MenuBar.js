@@ -42,7 +42,8 @@ const mapStateToProps = (state, ownProps = {}) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onChangeTab: (value) => {
-    dispatch( { type: "ACTIVE_TAB_CHANGE", payload: value });
+    dispatch( { type: "ACTIVE_TAB_CHANGE", payload: {tab: value} });
+    dispatch(push(`/${value}`))
   }
 });
 
